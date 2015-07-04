@@ -1,0 +1,27 @@
+
+<div class="panel panel-default" ng-repeat="form in formular">
+
+	<div class="panel-heading">
+		<h3 class="panel-title">{{form.label}}</h3>
+	</div>
+
+	<div class="panel-body">
+		<p>{{form.description}}</p>
+		<div ng-repeat="part in form.fields" ng-switch="part.type">
+			<field-text data="part" ng-switch-when="text"></field-text>
+			<field-double data="part" ng-switch-when="double"></field-double>
+			<field-password data="part" ng-switch-when="password"></field-password>
+			<field-email data="part" ng-switch-when="email"></field-email>
+			<field-address data="part" ng-switch-when="address"></field-address>
+
+			<field-map data="part" ng-switch-when="map"></field-map>
+			<field-textarea data="part" ng-switch-when="textarea"></field-textarea>
+			<field-gallery data="part" ng-switch-when="gallery"></field-gallery>
+			<field-datelaps data="part" ng-switch-when="datelaps"></field-datelaps>
+
+
+			
+		</div>
+	</div>
+
+</div>

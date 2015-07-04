@@ -1,0 +1,24 @@
+ma gallerie
+
+{{data}}
+
+
+<h4>Images associées au produit</h4>
+Nunc interdum imperdiet mi, vel tristique purus malesuada eget. Nulla quis dapibus est. Phasellus non consequat sem. Vivamus lacinia vitae augue a ultrices. Aenean ex lorem, efficitur in nisi vitae, fringilla eleifend tellus. Nam placerat enim eget leo posuere, vel sagittis nisi euismod.
+<div>
+	<div ng-repeat="image in data" style="float:left; width:200px; height:200px;margin:3px;" 
+	class="panel panel-default">
+
+	<div style="height:160px;text-align:center;margin:3px;">
+		<img ng-src="{{image.url}}" class="img-responsive" style="max-height:150px; pointer-events: none;"/>	
+	</div>
+	<div style="text-align:right;margin:5px;height:30px;">
+		<button type="button" class="btn btn-xs btn-warning" ng-click="removePicture($index)">Supprimer</button>
+	</div>
+
+	</div>
+	<div style="display: block;">
+		<div id="dropZone" style="float:left; width:200px; height:200px;margin:3px;border:dashed 5px" 
+		class="panel panel-default" ondragover="allowDrop(event)" onDragLeave="disabledDrop(event)" ondrop="drop(event)">
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<span class="help-block">Nunc interdum imperdiet mi, vel tristique purus malesuada eget. Nulla quis dapibus est. Phasellus non consequat sem. Vivamus lacinia vitae augue a ultrices. Aenean ex lorem, efficitur in nisi vitae, fringilla eleifend tellus. Nam placerat enim eget leo posuere, vel sagittis nisi euismod.</span> 
+{{canvaName}}
+<div id="map-canvas" style="height:400px; width=100%" ng-init="init()"></div>
+
+<br/>
+
+<div class="list-group" >
+	<li class="list-group-item">
+		<button class="btn btn-success" ng-click="addCircle()">
+			Ajouter une zone de diffusion
+		</button>
+		<span class="pull-right">
+			<div class="form-group">
+				<div class="form-control-static">
+					Coûts total journalier : {{ totalAmount() | currency:"CHF "}}
+				</div>
+			</div>
+		</span>
+	</li>
+	<a ng-repeat="(key, circle) in geoZones" ng-class="selectedCircles[key] ? 'list-group-item active' : 'list-group-item'" ng-click="changeSelection(key, true)">
+
+		<b>Zone {{oneMore(key)}} :</b> Coûts journalier {{processPrice(circle.radius) | currency:"CHF "}}
+
+		<span class="pull-right">
+			<button class="btn btn-xs btn-warning" ng-click="removePoint($index)">
+				Supprimer
+			</button>
+		</span>
+	</a>
+</div>

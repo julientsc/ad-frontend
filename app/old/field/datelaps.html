@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col-md-6 col-sm-6 col-xd-6">
+		<div class="form-group" ng-class="{'has-error': datepickerForm.date.$invalid}">
+			<label for="dateStart">{{data.dateStart.label}}</label>
+			<input id="dateStart" type="text" class="form-control" ng-model="data.dateStart.content" name="date" bs-datepicker data-min-date="today" data-date-format="dd.MM.yyyy" data-max-date="{{data.dateStop.content}}">
+			<span class="help-block">{{data.dateStart.help}}</span> 
+		</div>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xd-6">
+		<div class="form-group" ng-class="{'has-error': datepickerForm.date.$invalid}">
+			<label for="dateStop">{{data.dateStop.label}}</label>
+			<input id="dateStop" type="text" class="form-control" ng-model="data.dateStop.content" name="date" bs-datepicker data-min-date="today" data-date-format="dd.MM.yyyy" data-min-date="{{data.dateStart.content}}">
+			<span class="help-block">{{data.dateStop.help}}</span> 
+		</div>
+	</div>
+</div>
